@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>CodeMirror: Dvare Framework</title>
+
+    <!-- CodeMirror -->
+    <link rel="stylesheet" href="../node_modules/codemirror/lib/codemirror.css">
+    <link rel="stylesheet" href="../node_modules/codemirror/addon/hint/show-hint.css">
+    <script src="../node_modules/codemirror/lib/codemirror.js"></script>
+    <script src="../node_modules/codemirror/addon/edit/matchbrackets.js"></script>
+    <script src="../node_modules/codemirror/addon/hint/show-hint.js"></script>
+    <!-- CodeMirror Extension -->
+    <script src="../mode/dvare/dvare.js"></script>
+    <link rel="stylesheet" href="../addon/hint/dvare-hint.js">
+
+
+    <style>
+        .CodeMirror-hover {
+            outline: 1px solid grey;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Dvare Text</h1>
+
+<form>
+    <textarea id="code" name="code">
+    </textarea>
+</form>
+
+<script type="text/javascript">
+    var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+        extraKeys: {"Ctrl-Space": "autocomplete"},
+        lineNumbers: true,
+        matchBrackets: true,
+        mode: "text/x-dvare"
+    });
+</script>
+</body>
+</html>

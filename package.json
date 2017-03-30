@@ -1,0 +1,22 @@
+{
+  "name": "dvare-codemirror-extension",
+  "license": "MIT",
+  "version": "0.0.1",
+  "author": "Muhammad Hammad <hammadirshad046@gmail.com>",
+  "description": "Dvare Framework CodeMirror Extension",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/dvare/dvare-codemirror-extension.git"
+  },
+  "scripts": {
+    "publish": "node ./scripts/git-tag.js"
+  },
+  "dependencies": {
+    "codemirror": "^5.8.0"
+  },
+  "keywords": [
+    "CodeMirror",
+    "Dvare Framework"
+  ]
+}
+
