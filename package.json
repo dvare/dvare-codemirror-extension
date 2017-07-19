@@ -1,7 +1,7 @@
 {
   "name": "dvare-codemirror-extension",
   "license": "MIT",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Muhammad Hammad <hammadirshad046@gmail.com>",
   "description": "Dvare Framework CodeMirror Extension",
   "repository": {

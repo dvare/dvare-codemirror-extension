@@ -350,16 +350,18 @@
     def("text/x-dvare", {
         name: "clike",
 
-
-        keywords: words("assign update Invoke invoke Function function fun Abs abs Match match Date date DateTime" +
-            " dateTime today Pow pow not NOT Not and AND And && or OR implies Implies eq ne lt le> gt ge in IN In" +
-            " notIn NOTIN NotIn between Between  Mul mul Div div Add add Sub sub Max max Min min toInteger ToInteger " +
-            "toString ToString ToDate toDate substring Substring append Append prepend Prepend " +
+        keywords: words("assign update Invoke invoke Function function fun Abs abs " +
+            "Match match InsideComb insideComb CombExists combExists InsideExistsComb insideExistsComb Date date DateTime " +
+            "dateTime today Pow pow not NOT Not and AND And && or OR implies Implies eq ne lt le gt ge in IN In " +
+            "notIn NOTIN NotIn between Between  Mul mul Div div Add add Sub sub Max max Min min toInteger ToInteger " +
+            "toString ToString ToDate toDate AddYears addYears AddMonths addMonths AddDays addDays GetYears getYears " +
+            "substring Substring append Append prepend Prepend " +
             "contains Contains startsWith Startswith StartsWith startswith endsWith Endswith EndsWith endswith " +
             "forAll ForAll endForAll EndForAll forEach ForEach endForEach EndForEach Values values Filter filter " +
             "Map map Sort sort GetItem getItem HasItem hasItem ItemPosition itemPosition First first Last last " +
             "Length length notEmpty NotEMPTY isEmpty ISEMPTY  Maximum maximum Minimum minimum Mean mean Avg avg " +
-            "Median median Mode mode  Sum sum Value value  Pair pair Keys keys  PutExp putExp GetExp getExp IF if ELSE else THEN then ENDIF endif Def def let Let"),
+            "Median median Mode mode  Sum sum Value value  Pair pair Keys keys  PutExp putExp GetExp getExp " +
+            "IF if ELSE else THEN then ENDIF endif Def def let Let"),
 
         types: words("IntegerType FloatType StringType BooleanType DateType IntegerListType FloatListType" +
             " StringListType BooleanListType DateListType"),
