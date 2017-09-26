@@ -10,6 +10,7 @@
         mod(CodeMirror);
 })(function (CodeMirror) {
     "use strict";
+
     function Context(indented, column, type, info, align, prev) {
         this.indented = indented;
         this.column = column;
@@ -221,14 +222,14 @@
                 else if (curPunc == ctx.type) popContext(state);
                 else if (indentStatements &&
                     (((ctx.type == "}" || ctx.type == "top") && curPunc != ";") ||
-                    (ctx.type == "statement" && curPunc == "newstatement"))) {
+                        (ctx.type == "statement" && curPunc == "newstatement"))) {
                     pushContext(state, stream.column(), "statement", stream.current());
                 }
 
                 if (style == "variable" &&
                     ((state.prevToken == "def" ||
-                    (parserConfig.typeFirstDefinitions && typeBefore(stream, state, stream.start) &&
-                    isTopScope(state.context) && stream.match(/^\s*\(/, false)))))
+                        (parserConfig.typeFirstDefinitions && typeBefore(stream, state, stream.start) &&
+                            isTopScope(state.context) && stream.match(/^\s*\(/, false)))))
                     style = "def";
 
                 if (hooks.token) {
@@ -354,17 +355,19 @@
             "Match match InsideComb insideComb CombExists combExists InsideExistsComb insideExistsComb Date date DateTime " +
             "dateTime today Pow pow not NOT Not and AND And && or OR implies Implies eq ne lt le gt ge in IN In " +
             "notIn NOTIN NotIn between Between  Mul mul Div div Add add Sub sub Max max Min min toInteger ToInteger " +
-            "toString ToString ToDate toDate AddYears addYears AddMonths addMonths AddDays addDays GetYears getYears " +
+            "toString ToString toBoolean ToBoolean ToDate toDate AddYears addYears AddMonths " +
+            "addMonths AddDays addDays GetYears getYears " +
             "substring Substring append Append prepend Prepend " +
             "contains Contains startsWith Startswith StartsWith startswith endsWith Endswith EndsWith endswith " +
             "forAll ForAll endForAll EndForAll forEach ForEach endForEach EndForEach Values values Filter filter " +
             "Map map Sort sort GetItem getItem HasItem hasItem ItemPosition itemPosition First first Last last " +
-            "Length length notEmpty NotEMPTY isEmpty ISEMPTY  Maximum maximum Minimum minimum Mean mean Avg avg " +
-            "Median median Mode mode  Sum sum Value value  Pair pair Keys keys  PutExp putExp GetExp getExp " +
-            "IF if ELSE else THEN then ENDIF endif Def def let Let"),
+            "Size size Length length notEmpty NotEMPTY isEmpty ISEMPTY  Maximum maximum Minimum minimum Mean mean Avg avg " +
+            "Median median Mode mode  Sum sum Value value " +
+            "Pair pair pairList PairList Keys keys toValue ToValue getValue GetValue toKey ToKey getKey GetKey " +
+            "IF if ELSE else THEN then ENDIF endif Def def let Let print Print Log log "),
 
-        types: words("IntegerType FloatType StringType BooleanType DateType IntegerListType FloatListType" +
-            " StringListType BooleanListType DateListType"),
+        types: words("IntegerType FloatType StringType BooleanType DateType PairType IntegerListType FloatListType" +
+            " StringListType BooleanListType DateListType PairListType"),
 
 
         blockKeywords: words("IF if ELSE else THEN then ENDIF endif"),
